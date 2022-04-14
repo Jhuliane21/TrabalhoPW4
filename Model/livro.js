@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const banco = require("./db.js");
+const banco = require("../db.js");
 
 const Livro = banco.define("livro", {
     id: {

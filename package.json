@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/Jhuliane21/TrabalhoPW4.git"
   },
   "author": "",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Jhuliane21/TrabalhoPW4#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
     "express": "^4.17.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.19.0"

@@ -1,5 +1,10 @@
 var express = require("express");
+
+var db = require("./db.js");
+
+var express = require("express");
 var app = express();
+
 
 porta = 80;
 
