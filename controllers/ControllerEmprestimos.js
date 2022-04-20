@@ -14,10 +14,10 @@ router.get('/:id', async(req, res)=>{
   res.status(200).json(emprestimo);
 
 });
-router.post('/adicionar', async(req, res)=>{
+router.post('/emprestar', async(req, res)=>{
   const {idLivro, CpfPessoa} = req.body;
   const novoEmprestimo = Emprestimos.create({idLivro, CpfPessoa});
-  res.status(200).json({message: 'Cadastrado com sucesso'});
+  res.status(200).json({message: 'Emprestado com sucesso'});
 });
 
 
