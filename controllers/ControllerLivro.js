@@ -1,37 +1,43 @@
 
-var LivroModel = require("../Model/livro.js");
+const  {Livros} = require('../Model'); 
+const {Router} = require('express');
 
-exports.listAll = (req, res) => {
-  console.log("Aqui");
-  Book.find().then(data => {
-    res.send({ data });
-  }).catch(err => {
-    res.status(500).send({id: 'internal-error', msg: err.message });
-  });
-  
-}
+const router = Router();
 
-exports.adicionar = (req, res) => {
-  if (!(isNotEmpty(req.body.nome) && 
-        isNotEmpty(req.body.descricao) &&
-        isNotEmpty(req.body.author))) {
-            
-    res.status(400).send({id: 'missing-data', msg: "Dados para cadastro insuficientes." });
-    return;
-  }
+router.get('/', async(req, res)=>{
+  const livros = await Livros.findAll();
+  res.status(200).json(livros);
+});
+router.get('/:id', async(req, res)=>{
+  const {id} = req.params;
+  const livros = await Livros.findByPk(id);
+  res.status(200).json(livros);
 
-    const livro = new LivroModel({
-      title: "Harry",
-      descricao: "Menino Bruxo",
-      author: "JK Rowling",
-    });
+});
+router.post('/adicionar', async(req, res)=>{
+  const {nome, descricao, author} = req.body;
+  const novoLivro = Livros.create({nome, descricao, author});
+  res.status(200).json({message: 'Cadastrado com sucesso'});
+});
 
-    livro.save(livro).then(data => {
-      res.send({ data });
-    }).catch(err => {
-        res.status(500).send({id: 'internal-error', msg: err.message });
-    });
-}
+router.delete('/remover/:id', async(req, res)=>{
+  await Livros.destroy({
+    where:{
+      id: req.params.id,
+    },
+  })
+  res.status(200).json({message: 'Excluido com sucesso.'})
+});
 
+router.put('/editar/:id', async(req, res)=>{
+  const {nome, descricao, author} = req.body;
+  await Livros.update(
+    {nome, descricao, author},
+    {
+        where: {id: req.params.id}
+    }
+  );
+  res.status(200).json({message: 'Editado com sucesso'})
+});
 
-//export default { findAll, findLivro, addLivro,updateLivro,deleteLivro }
+module.exports = router;
