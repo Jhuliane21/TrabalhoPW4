@@ -7,7 +7,9 @@ const router = Router();
 router.get('/', async(req, res)=>{
   const livros = await Livros.findAll();
   res.status(200).json(livros);
+  res.send(livros);
 });
+
 router.get('/:id', async(req, res)=>{
   const {id} = req.params;
   const livros = await Livros.findByPk(id);

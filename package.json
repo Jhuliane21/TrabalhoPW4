@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Jhuliane21/TrabalhoPW4#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "esm": "^3.2.25",
     "express": "^4.17.3",
