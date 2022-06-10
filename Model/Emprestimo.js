@@ -1,8 +1,9 @@
-const Emprestimos = (sequelize, DataTypes)=>{
-    return sequelize.define( 'Emprestimos',{
+const emprestimos = (sequelize, DataTypes)=>{
+    return sequelize.define( 'emprestimos',{
         idLivro: DataTypes.INTEGER,
         CpfPessoa: DataTypes.STRING,
+
     });
 };
 
-module.exports = Emprestimos;
+module.exports = emprestimos;

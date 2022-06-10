@@ -3,7 +3,6 @@ import './Card.css';
 import Axios from 'axios';
 
 
-
 export default function Card(props){
 
 
@@ -13,12 +12,14 @@ export default function Card(props){
             console.log(response)
         });
     }
-      
-        
+   
    return (   
     
     <div className='card'>
-      <h2>{props.id} {props.nome}</h2>
+      <h2>Id: {props.id} </h2>
+      <p>Nome do Livro:{props.nome}</p>
+      <p>Descrição: {props.descricao}</p>
+      <p>Autor: {props.autor}</p>
         <button className='button-card' onClick={() => excluir()}>Excluir</button>
     </div>
    )

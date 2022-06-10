@@ -46,5 +46,18 @@ nav li {
 #emprestar{
     display: none;
 }
+#button-card{
+    background-color: rgb(255, 136, 0); 
+    border-radius: 20px;
+    color: white;
+    padding: 5px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+ 
 
+  }
+  #button-card:hover{
+      background-color: rgb(203, 172, 136);
+  }
 
