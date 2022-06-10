@@ -1,0 +1,44 @@
+body{
+    font-family: 'Marvel', sans-serif;
+}
+
+  .row{
+    width: 100%;
+    max-width: 45rem;
+    margin: 10 auto black;
+    padding: 1.5rem;
+    background-color: yellow;
+  }
+  .card{
+    border-radius: 20px;
+    width: 20%;
+    margin: 10px auto;
+    padding: 1rem 1rem 2rem 2rem;
+    background-color: rgb(128, 96, 0);
+    
+  }
+  .button-card{
+    background-color: rgb(255, 136, 0); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+  }
+  .button-card:hover{
+      color: rgb(203, 172, 136);
+  }
+  
+    label{
+      color: snow;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+input{
+    border-radius: 20px;
+}

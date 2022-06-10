@@ -1,14 +1,18 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const controllers = require('./controllers');
-const cors = require("cors");
+
 i18n = require("i18n");
 
 const app = express();
 
+const cors = require('cors');
+
+app.use(cors());
+
+
 app.use(bodyParser.json());
 
-app.use(cors);
 porta = 3001;
 
 app.use(i18n.init);

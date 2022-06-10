@@ -7,7 +7,6 @@ const router = Router();
 router.get('/', async(req, res)=>{
   const livros = await Livros.findAll();
   res.status(200).json(livros);
-  res.send(livros);
 });
 
 router.get('/:id', async(req, res)=>{
@@ -32,7 +31,9 @@ router.delete('/remover/:id', async(req, res)=>{
 });
 
 router.put('/editar/:id', async(req, res)=>{
-  const {nome, descricao, author} = req.body;
+  const nome = req.params.nome;
+  const descricao = req.params.descricao;
+  const author = req.params.author;
   await Livros.update(
     {nome, descricao, author},
     {
