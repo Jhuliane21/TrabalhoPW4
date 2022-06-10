@@ -4,8 +4,6 @@ import Axios from 'axios';
 import { useState } from 'react';
 
 export default function CardUnico(props){
-
-
    return (   
     <div className='card'>
       <h2 >{props.id} </h2>
